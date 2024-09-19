@@ -24,7 +24,15 @@ export default async function handler(req, res) {
                 {
                     role: "user",
                     content: [
-                        { type: "text", text: "Create a JSON structure for all the food items and their quantities in the image. Quantity should only be a number. Return only JSON structure." },
+                        { type: "text", text: `Create a JSON structure for all the food items and their quantities in the image. Quantity should be an integer. Return only JSON structure. Return in the following JSON format
+                        {
+                            "food_items": [
+                                {
+                                "name": str,
+                                "quantity": str
+                                }
+                            ]
+                        }` },
                         {
                             type: "image_url",
                             image_url: {

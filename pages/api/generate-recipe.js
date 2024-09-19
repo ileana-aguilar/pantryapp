@@ -1,5 +1,5 @@
 import { OpenAI } from 'openai';
-
+import { firestore } from '@/firebase'; // Ensure this points to your correct firebase config file
 import { collection, getDocs } from 'firebase/firestore';
 
 export default async function handler(req, res) {
@@ -17,7 +17,7 @@ export default async function handler(req, res) {
             pantryItems.push(`${doc.id}: ${data.quantity}`);
         });
 
-       
+        
         const itemsList = pantryItems.join(', ');
         const prompt = `Write a tasty recipe using the following pantry items: ${itemsList}. You do not need to use all items. Return only recipe.`;
 

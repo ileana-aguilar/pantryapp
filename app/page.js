@@ -161,6 +161,13 @@ export default function Home() {
         
         console.log('Parsed Image Data:', imageData);
 
+        if (imageData && imageData.food_items) {
+          for (const item of imageData.food_items) {
+            console.log(`Adding ${item.name} with quantity ${item.quantity} to the pantry`);
+            await addImageItem(item.name, item.quantity);  
+          }
+        }
+
         return imageData;
     } catch (error) {
         console.error('Error processing image:', error);
@@ -203,8 +210,8 @@ const generateRecipe = async () => {
       const result = await response.json();
       console.log('Generated Recipe:', result.data);
 
-      
-      const [title, ...content] = result.data.split('\n');
+      // Assuming the first line is the title, and the rest is the content
+      const [title, ...content] = result.data.split('\n').filter(line => line.trim() !== '');
       setRecipeTitle(title);
       setRecipeContent(content.join('\n'));
 
@@ -212,12 +219,6 @@ const generateRecipe = async () => {
       console.error('Error generating recipe:', error);
   }
 };
-
-
-
-
-
-
 
 
 
@@ -461,7 +462,8 @@ const generateRecipe = async () => {
           <Typography variant="h5" gutterBottom>{recipeTitle}</Typography>
           <Typography variant="body1" whiteSpace="pre-wrap">{recipeContent}</Typography>
         </Box>
-      )}
+)}
+
         
       </Box>
     </Box>
