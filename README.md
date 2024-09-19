@@ -41,14 +41,14 @@ Pantry App is an AI-powered recipe suggestion platform that helps users manage t
     ```
 4. Set up Firebase and add your configuration in `.env`:
     ```bash
-    NEXT_PUBLIC_FIREBASE_API_KEY=<your-firebase-api-key>
-    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=<your-firebase-auth-domain>
+    FIREBASE_API_KEY=<your-firebase-api-key>
+    FIREBASE_AUTH_DOMAIN=<your-firebase-auth-domain>
     NEXT_PUBLIC_FIREBASE_PROJECT_ID=<your-firebase-project-id>
     ```
 
 5. Add your OpenAI API key to `.env`:
     ```bash
-    NEXT_PUBLIC_OPENAI_API_KEY=<your-openai-api-key>
+    OPENAI_API_KEY=<your-openai-api-key>
     ```
 
 6. Run the development server:
