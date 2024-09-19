@@ -15,7 +15,7 @@ export default async function handler(req, res) {
         return;
     }
 
-    const openai = new OpenAI({ apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY });
+    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
     try {
         const response = await openai.chat.completions.create({

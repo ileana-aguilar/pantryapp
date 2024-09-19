@@ -21,7 +21,7 @@ export default async function handler(req, res) {
         const itemsList = pantryItems.join(', ');
         const prompt = `Write a tasty recipe using the following pantry items: ${itemsList}. You do not need to use all items. Return only recipe.`;
 
-        const openai = new OpenAI({ apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY });
+        const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
         const completion = await openai.chat.completions.create({
             model: "gpt-3.5-turbo",
