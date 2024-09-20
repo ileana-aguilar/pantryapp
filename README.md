@@ -18,6 +18,9 @@ Pantry App is an AI-powered recipe suggestion platform that helps users manage t
 - **Hosting**: Vercel
 - **Database**: Firebase
 
+## Pantry App Demo
+[![Watch the video](https://img.youtube.com/vi/lnvdHbbwfGk/maxresdefault.jpg)](https://youtu.be/lnvdHbbwfGk)
+
 ## Getting Started
 
 ### Prerequisites
